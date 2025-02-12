@@ -58,3 +58,35 @@ console.log(typeof myFunction) //function
 
 // Documentations
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+
+
+// ##################### Memory #####################
+
+//Stack(Primitive) (value) , Heap (Non-Primitive) (reference)
+
+
+// these are store in stack and copies are made and given to another variable
+// changed doesn't reflect back
+let name = "krishan"
+let newName = name
+newName = "radha"
+console.log(name); //krishan
+console.log(newName); //radha
+
+
+// these uses heap and reference is give to the other type , changes reflect back to original
+let userOne = {
+    email : "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "krishan@google.com"
+console.log(userOne.email); // krishan@google.com
+console.log(userTwo.email); //krishan@google.com
+
+
+
