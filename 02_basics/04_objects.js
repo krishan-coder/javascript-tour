@@ -78,3 +78,35 @@ console.log(Object.entries(newUser))
 
 console.log(newUser.hasOwnProperty("isLoggedIn")) // true
 console.log(newUser.hasOwnProperty("isLogged"))   // false
+
+
+const course = {
+    coursename : "java-script",
+    price: "999",
+    courseInstructor: "Raman"
+}
+console.log(course.courseInstructor) // Raman
+
+const {courseInstructor} = course
+console.log(courseInstructor)  // Raman
+
+
+// de-structuring
+const {courseInstructor : instr} = course  // creating alias name
+console.log(instr)  // Raman
+
+
+// something about API (it is just an object without any name)
+// {
+//     "name":"krishan",
+//     "age" : "21",
+//     "salary" : "50k"
+// }
+
+// API can be array of objects
+[
+    {},
+    {},
+    {}
+]
+
