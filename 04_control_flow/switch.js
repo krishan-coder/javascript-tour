@@ -36,3 +36,5 @@ switch(week){
         console.log("Not a week number");
         break;
 }
+
+// all the cases will get executed until break statement is introduced
