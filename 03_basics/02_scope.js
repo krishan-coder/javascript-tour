@@ -40,3 +40,5 @@ function addone(num){
 const addtwo = function(num){
     return num+2
 }
+
+// because initially all the variables are given a memory space globally as undefined and after that they are initalized to the respective variables 
