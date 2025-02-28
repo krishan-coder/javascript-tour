@@ -43,7 +43,7 @@ function calculateCartPrice(val1, val2,...num1){   // rest operator
     return num1
 
 }
-console.log(calculateCartPrice(299,452,799,2000)) // [500, 2000]
+console.log(calculateCartPrice(299,452,799,2000)) // [799, 2000]
 
 
 
