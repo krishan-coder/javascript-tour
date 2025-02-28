@@ -2,7 +2,7 @@ const marvel = ["thor" , "Ironman", "spiderman"]
 const dc = ["superman", "flash", "batman"]
 
 // marvel.push(dc)
-console.log(marvel);  //[ 'thor', 'Ironman', 'spiderman', [ 'superman', 'flash', 'batman' ] ]  it adds another array as an element
+// console.log(marvel);  //[ 'thor', 'Ironman', 'spiderman', [ 'superman', 'flash', 'batman' ] ]  it adds another array as an element
 
 // concat return the new array after concatinating
 const combineHero = marvel.concat(dc)
@@ -11,6 +11,7 @@ console.log(combineHero)
 // [ 'thor', 'Ironman', 'spiderman', 'superman', 'flash', 'batman' ]
 
 
+// spread/rest operator 
 const all_new_heros = [...marvel, ...dc] // always 3 dots no matter the length of array
 
 console.log(all_new_heros)  
