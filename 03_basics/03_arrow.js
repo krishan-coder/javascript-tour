@@ -49,8 +49,8 @@ chai()
 // console.log(addTwo(2,5))   // 7
 
 // const addTwo = (num1, num2) => {name : "krish"}   // undefined 
-const addTwo = (num1, num2) => ({name : "krish"})   // {name : 'krish'} 
-console.log(addTwo(2,5))   // 7
+const addTwo = (num1, num2) => ({name : "krish"})   
+console.log(addTwo(2,5)) // {name : 'krish'} 
 
 
 
