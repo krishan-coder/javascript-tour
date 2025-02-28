@@ -4,13 +4,13 @@ let score = 33
 
 let str = "67"
 let valInNUM  = Number(str) // conversion
-// console.log(typeof valInNUM); // number
+// console.log(typeof valInNUM); // number  
 // console.log( valInNUM);  // 67
 
 
 let str1 = "67abc"
 let valInNUM1  = Number(str1)
-// console.log(typeof valInNUM1); // number
+// console.log(typeof valInNUM1); // number(NaN is consider as number in js)
 // console.log( valInNUM1); // NaN -> not a number
 
 let val = null
@@ -31,6 +31,7 @@ let b1  = Number(b) // conversion
 
 let s = "krisha"
 let s1  = Number(s) // conversion
+console.log(typeof s1);
 // console.log( s1); // NaN
 
 let loggIn = "hitesh123"
