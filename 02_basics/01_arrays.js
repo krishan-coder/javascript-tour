@@ -41,8 +41,9 @@ console.log(myArr.includes(9)) // false
 console.log(myArr.indexOf(9)) // -1
 console.log(myArr.indexOf(4)) // 4
 
-const newArr = myArr.join() 
-console.log(newArr); //0,1,2,3,4,5,6
+const newArr1 = myArr.join() // by default is joins by using ","
+const newArr = myArr.join("-")  
+console.log(newArr); //0-1-2-3-4-5-6
 console.log(typeof newArr);  // string
 
 
@@ -53,7 +54,7 @@ console.log("A ", myArr)
   0, 1, 2, 3,
   4, 5, 6
 ]*/
-
+// make temporary removal or cutting of the ele
 const myn1 = myArr.slice(1,3)
 console.log(myn1) // [ 1, 2 ]
 
@@ -66,6 +67,7 @@ console.log("B ", myArr)
 
  // ############################ splice  ###########
 
+ // make permanent removal or cutting of the ele
 const myn2 = myArr.splice(1,3)
 console.log(myn2) // [ 1, 2, 3 ]
 console.log("C ", myArr)  // C  [ 0, 4, 5, 6 ]
