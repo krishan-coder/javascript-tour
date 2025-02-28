@@ -6,7 +6,7 @@ console.log(`Hello there my self ${name} and my age is ${age}`);
 
 const game = new String("Free fire")
 console.log(game[0]); // F
-console.log(game.__proto__); // {}
+console.log(game.__proto__); // {} (gives empty obj are the game is currently an obj)
 
 
 console.log(game.length); // 9
