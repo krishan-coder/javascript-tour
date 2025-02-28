@@ -30,7 +30,8 @@ const obj5 = {5: "e", 6: "f"}
 // 1->
 const obj3 = {obj1, obj2, obj5}
 console.log(obj3)
-// { obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'c', '4': 'd' } }
+// { obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'c', '4': 'd' },
+// obj5: { '5': 'e', '6': 'f' } }
 
 // 2->
 const obj4 = Object.assign({}, obj1, obj2) 
@@ -68,7 +69,7 @@ const users = [
         id: 1,
         email: "abs@gmail.com"
     }
-]
+];
 users[1].email // gives the email of the users[1]
 
 console.log(Object.keys(newUser))  // [ 'id', 'name', 'isLoggedIn' ]
@@ -104,9 +105,9 @@ console.log(instr)  // Raman
 // }
 
 // API can be array of objects
-[
-    {},
-    {},
-    {}
-]
+// [
+//     {},
+//     {},
+//     {}
+// ];
 
