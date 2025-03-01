@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <ul id="images">
+        <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+        <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+        <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><a style="color: black;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+</body>
+<script>
+    // // meth 1
+    // document.getElementById('owl').onclick() = function(){
+    //     alert("Owl Clicked by onclick");
+    // }
+
+    // attachEvent()
+    // jQuery - on
+
+
+    // // meth 2
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert("Owl clicked by eventListener");
+    // },false)
+
+
+    // meth 3 (event deligation) best approach
+    document.getElementById('images').addEventListener('click', function(e) {
+        if (e.target.tagName === "IMG") {
+            console.log("Image clicked:", e.target.id);
+        }
+    }, false);
+    
+    //type, timestamp, defaultPrevented
+    // target,toElement, srcElement, currentTarget
+    
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+    
+// // #################### Bubbling(event propogation) in event's  ###############
+
+//     //this call  the whole ul, on click 
+//     document.getElementById('images').addEventListener('click',function(){
+//         alert("ul clicked by eventListener");
+//     },false)
+
+//     // this 1st track the li(owl), then the ul . On click
+//     document.getElementById('owl').addEventListener('click',function(e){
+//         alert("Owl clicked by eventListener");
+//         e.stopPropagation(); // it doesn't call the outer event (ul)
+//     },false);
+
+// // ####### capturing mode   ####################
+
+//     // True parameter
+//     //this call  the whole ul, on click 
+//     document.getElementById('images').addEventListener('click',function(){
+//         alert("ul clicked by eventListener");
+//     },true);
+
+//     // this 1st track the ul, then the li(owl) . On click
+//     document.getElementById('owl').addEventListener('click',function(){
+//         alert("Owl clicked by eventListener");
+//     },true);
+    
+// // #########################################################
+
+
+    document.getElementById('google').addEventListener('click', function(event){
+        event.preventDefault();  // prevent the link from the navigation
+        event.stopPropagation();  // prevent the bubbling/ capturing
+        console.log("Google clicked");
+    },false)
+
+    // 
+    document.getElementById('images').addEventListener('click',function(event){
+        // console.log(event.target.parentNode);
+        // let removeIt = event.target.parentNode;
+        // removeIt.remove()
+        // removeIt.parentNode.removeChild(removeIt); // same as remove
+        
+        
+        // this does not delete the whole parentNode when child is clicked i.e when we click li the whole ul will be deleted. To solve this=>
+
+        // deletion is performed using tagName (only if the IMG tag is clicked then only the particular image will be deleted )
+        console.log(event.target.tagName); // this gives tagName of each ele
+        if(event.target.tagName === 'IMG'){
+            console.log(event.target.id);
+            let remov = event.target.parentNode;
+            remov.remove();
+        }
+    })
+
+</script>
+</html>
