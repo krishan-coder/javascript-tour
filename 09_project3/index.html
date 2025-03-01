@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGITAL CLOCK</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            color: white;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            background-color: black;
+            align-items: center;
+        }
+        .center{
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #clock{
+            margin-top: 5px;
+            background-color: orange;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            height: 60px;
+            width: 150px;
+            border-radius: 10px;
+            font-weight: 900px;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(255, 165, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <!-- <div id="content1">Current Time</div> -->
+        <h2>Current Time</h2>
+        <div id="clock"></div>
+    </div>
+    <script src="DIGITAL_Clock.js"></script>
+</body>
+</html>
