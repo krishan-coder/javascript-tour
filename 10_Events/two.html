@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS Syncronous </h1>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    // executed one after the set time
+    // setTimeout(function(){
+    //     console.log("Krishan")
+    // }, 2000);
+
+    // // different way of the same above
+    // const sayName = function(){
+    //     console.log("Hola Krishan");
+    // }
+    // setTimeout(sayName,2000);
+
+    // change the h1 text after 3 sec
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Best Js series";
+        
+    }
+    const changeMe = setTimeout(changeText,3000); // variable created to use as the reference in case to stop the event
+
+    // this stop the event 
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe);
+        console.log("Stopped");
+    })
+</script>
+</html>
