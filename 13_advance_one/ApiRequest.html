@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: #212121;
+            color: #ffffff;
+        }
+        .card {
+            border: 1px solid #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        img {
+            border-radius: 50%;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+            border-radius: 20%;
+        }
+        button:hover {
+            background-color: #07d03d;
+            border-radius: 20%;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+    </p>
+    <div class="insert">
+        <button onclick="getProfile()">Show</button>
+    </div>
+</body>
+<script>
+    function getProfile(){
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET',requestUrl);
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if(xhr.readyState === 4){
+
+                // $$$ learning  $$$$
+
+            // const data = this.responseText;
+            // // console.log(typeof data); // string(data come in form of string)
+            // console.log(data.followers); // undefined (due to string but it try fetch objects)
+            
+            // const d = JSON.parse(this.responseText); // convert text (string) into a JavaScript Object 
+            // console.log(d.followers); // this will give followers
+            // console.log(d);
+
+// ############################################################################
+            
+            // ######### fetching the photo,name,follower using API
+                const data = JSON.parse(this.responseText);
+                const urlA = data.avatar_url;
+                const follow = data.followers;
+                const insert = document.querySelector(".insert");
+                
+                insert.innerHTML = `
+                        <div class="card"> <img src="${urlA}" width="500px" height="600px">
+                        <h2>${data.name}</h2>
+                        <p>Followers: ${follow}</p> 
+                        </div>
+                        `;
+            }
+            
+        }
+        xhr.send();
+    }
+</script>
+</html>
