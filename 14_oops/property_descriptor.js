@@ -54,3 +54,11 @@ for (let [key,value] of Object.entries(chai)) {
 }
 // as use of enumerable : false the name cannot be iterable as it is passed in the parameter to be stopped for the iteration
 // when we do the enumerable : true then we can iterate over the name also (since passed in parameter)
+
+
+
+Object.defineProperty(Math, 'PI', {
+    value: 5
+  });
+  
+  console.log(Math.PI);  // we can redefine the value of the PI forcefully(a bad practice)
