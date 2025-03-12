@@ -1,0 +1,76 @@
+// closure is the combination of function buldled together with reference to surrounding state
+// it also gives access to an outer func scope from an inner function.
+
+
+// Lexical scoping
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+
+    //  this is called lexical scoping
+    function init(){
+        let name = "Morzilla";
+        function displayName(){
+            console.log(name);   // can have access to name
+        }
+        displayName();
+    }
+    init();
+    console.log(name) // error
+
+
+    /// closure
+
+    // function inits() {
+    //     var name = "Mozilla"; // name is a local variable created by init
+    //     function displayNames() { // displayName() is the inner function, a closure
+    //         console.log(name); // use variable declared in the parent function
+    //     }
+    //     return displayNames;  // this will return whole lexical scope(memory) / share the                                       reference of the function
+    // }
+    // const myfunc = inits();
+    // myfunc();
+
+
+</script>
+<script>
+    // document.getElementById('orange').onclick = function(){
+    //     document.body.style.backgroundColor = 'orange';
+    // }
+    // document.getElementById('green').onclick = function(){
+    //     document.body.style.backgroundColor = 'green';
+    // }
+
+
+// ############################################################3
+
+    // function clickHandler(color){
+    //     document.body.style.backgroundColor = `${color}`;
+    // }
+
+    // document.getElementById('orange').onclick = clickHandler('orange'); 
+    // // this will directly execute
+    // document.getElementById('green').onclick = clickHandler('green'); 
+
+
+// ############################################################3
+    // real world use case of the closure 
+    function clickHandler(color){
+        return function(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+    document.getElementById('orange').onclick = clickHandler('orange'); 
+    document.getElementById('green').onclick = clickHandler('green'); 
+</script>
+</html>
